@@ -20,7 +20,7 @@ import pyTruss as pt
 solver = pt.Solver()
 ```
 
-To create truss nodes, instantiate instances of the ```Node``` class. You can specify restrictions by settings the reactions parameter. By default the reactions parameter is equal to (0, 0) which indicates no reaction force at that node. **reactions = (1, 0)** represents a reaction force in the X direction.
+To create truss nodes, instantiate instances of the ```Node``` class. You can specify restrictions by settings the reactions parameter. By default the reactions parameter is equal to (0, 0) which indicates no reaction force at that node. reactions = (1, 0) represents a reaction force in the X direction.
 
 To apply forces to nodes you can set the force parameter equal to a non-zero vector. For example, force = (0, -30) represents a force pointing downwards with a force of 30. Finally add the nodes to the solver using ```solver.AddNodes()```. You can also add individual nodes using ```solver.AddNode()```
 
