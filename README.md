@@ -1,6 +1,6 @@
 # PyTruss
 
-Calculates internal and reaction forces in truss structure. This program can be used to check your hand calculations. It also tell you if truss structure is under or overdetermined.
+Calculates internal and reaction forces in truss structure. This program can be used to check your hand calculations. It can also tell you if your truss structure is under or overdetermined.
 
 ## Dependencies
 
