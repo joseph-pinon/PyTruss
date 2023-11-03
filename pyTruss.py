@@ -55,7 +55,7 @@ class Window():
 
         ## Go through nodes
         for node in graph.nodes:
-            x = self.Remap(node.x, Xmin, Xmax, self.root.winfo_width() - self.offsetX, self.offsetX)
+            x = self.Remap(node.x, Xmin, Xmax, self.offsetX, self.root.winfo_width() - self.offsetX)
             y = self.Remap(node.y, Ymin, Ymax, self.root.winfo_height() - self.offsetY,  self.offsetY)
 
             self.create_circle(x, y, self.nodeSize)
