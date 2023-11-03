@@ -3,9 +3,9 @@ import pyTruss as pt
 def GenerateStructure(solver):
     nodeA = pt.Node(0, 0, reactions=(False, True))
     nodeB = pt.Node(3, 3)
-    nodeC = pt.Node(3, 0, force = (30, -30))
+    nodeC = pt.Node(3, 0, force = (0, -30))
     nodeD = pt.Node(6, 4)
-    nodeE = pt.Node(6, 0, force = (30, -30))
+    nodeE = pt.Node(6, 0, force = (0, -30))
     nodeF = pt.Node(9, 3)
     nodeG = pt.Node(9, 0, force = (0, -90))
     nodeH = pt.Node(12, 0, reactions=(True, True))
@@ -34,5 +34,4 @@ def main():
     solver.Solve()
     solver.Draw()
     
-
 main()

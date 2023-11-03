@@ -504,7 +504,7 @@ class Solver():
     scale: Scales icons and force vectors
 
     """
-    def __init__(self, nodeSize = 5, lineThickness = 3, offset = (100, 100), fontSize = 20, width = 500, height = 500, scale = 50):
+    def __init__(self, nodeSize = 5, lineThickness = 3, offset = (100, 100), fontSize = 20, width = 800, height = 500, scale = 50):
         self.graph = Graph()
         self.window = Window(nodeSize, lineThickness, offset, fontSize, width, height, scale)
         self.solution = None
@@ -552,8 +552,6 @@ class Solver():
         """
         self.window.Draw(self.graph, self.solution)
         self.window.root.mainloop()
-
-
 
 
 

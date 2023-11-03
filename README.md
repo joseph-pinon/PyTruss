@@ -62,5 +62,4 @@ solver.Draw()
 ```
 Red indicates members in tension and blue is for compression. An example GUI output is shown below:
 
-<img src="Media/example.PNG" width="750">
-
+![Alt text](Media/Example.PNG)
