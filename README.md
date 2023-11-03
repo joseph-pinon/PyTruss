@@ -68,5 +68,39 @@ Blue indicates members in tension and red is for compression. An example GUI out
 
 According to the [method of joints](https://engineeringstatics.org/method-of-joints.html#:~:text=The%20method%20of%20joints%20is,forces%20in%20a%20truss%20structure.), each node in a truss problem yields two force balance equations. In addition to the node equations, there must also be a force balance on the entire structure. This yeilds 3 more equations (1 for X, 1 for Y and 1 for moment balance about any point). The number of unknown forces is simply the number of connections added with the number of reaction forces.
 
+```math
+\begin{pmatrix}
+a0_{AB} & ... & a0_{EF}\\
+a1_{AB} & ... & a1_{EF}\\
+... & ... & ...\\
+... & ... & ...\\
+... & ... & ...\\
+... & ... & ...\\
+a6_{AB} & ... & a6_{EF}
 
-Since each equation in simply a linear combination of the interior forces in each connection, we can form an NxM matrix where N is the number of equations, and M is the number of unknown forces. In order to solve this linear system the number of linearly independent rows must equal the number of unknowns. We call the number of linearly independent rows the rank of the matrix. After removing any linearly *dependent* rows, we inspect the amount of linearly independent rows we have left. If we have too few rows then the system is under-defined and there are infinite solutions. If the number of rows is too large, the system is over-defined and there is no solution. 
+\end{pmatrix}
+\begin{pmatrix}
+F_{AB}\\
+F_{AC}\\
+...\\
+...\\
+R_{AX}\\
+R_{AY}\\
+R_{CX}
+\end{pmatrix}
+=
+\begin{pmatrix}
+F_1 \\
+F_2 \\
+0\\
+...\\
+...\\
+FTotal_x\\
+FTotal_y\\
+Torque\\
+\end{pmatrix}
+```
+
+Since each equation in simply a linear combination of the interior forces in each connection, we can form an NxM matrix where N is the number of equations, and M is the number of unknown forces. On the rhs our constant vector with length M is filled with any known external forces. Our solution vector has a length of M and contains all of the unknown internal and reaction forces.
+
+In order to solve this linear system the number of linearly independent rows must equal the number of unknowns. We call the number of linearly independent rows the rank of the matrix. After removing any linearly *dependent* rows, we inspect the amount of linearly independent rows we have left. If we have too few rows then the system is under-defined and there are infinite solutions. If the number of rows is too large, the system is over-defined and there is no solution. 
